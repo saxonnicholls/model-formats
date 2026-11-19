@@ -67,8 +67,6 @@ TEST(HubClient, ResolvesAndDownloadsIntoTheCache)
     ASSERT_TRUE(r.is_ok()) << r.unwrap_err_unchecked().what();
     EXPECT_EQ(r->downloaded.size(), 4u);
     EXPECT_EQ(r->bytes, 200u * 1024 + 17 + 21 + 6);
-    const auto blob = cache::open(f.dir.path, "org/tiny")->blob(*info->files[1].sha256);   // sorted: config, empty, model, sub
-    (void)blob;
     for (const auto& [path, file] : f.hub.files) {
         const auto p = r->snapshot / path;
         ASSERT_TRUE(std::filesystem::exists(p)) << path;
