@@ -137,7 +137,9 @@ build).
     make crosscheck        # the Python cross-check
     make network           # the network tests
 
-A change is done when `make test-werror`, `make docs`, `make check` and `make ubuntu` pass. Docker is shared with
+A change is done when `make test-werror`, `make docs`, `make check` and `make ubuntu` pass. Sanitizer evidence comes
+from Linux (`make ubuntu`): on the current macOS host Apple's ASan runtime traps before `main` in every instrumented
+binary, an empty program included, so `make asan` there says nothing about this code. Docker is shared with
 other work: never stop a container or process this repository did not start; if Docker is busy, wait and retry.
 OpenSSL: on macOS CMake takes Homebrew's newest (`openssl@4`, else `@3`), so its headers agree with
 `/usr/local/include`; the hub target builds against the 3.0 API (`OPENSSL_API_COMPAT`).
