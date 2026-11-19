@@ -15,7 +15,7 @@
 /// bits, and bool (one byte, 0 or 1). safetensors names them `F64` ... `BOOL`; NumPy, GGUF and PyTorch map onto it in
 /// their own headers. Block-quantised GGUF types are not dtypes: they are `gguf::ggml_type`.
 ///
-/// `convert` turns a run of elements of one dtype into another: any number to a float type (through `double`; the
+/// `convert_elements` turns a run of elements of one dtype into another: any number to a float type (through `double`; the
 /// narrow floats round to nearest even with core's `ml::minifloat`), and integers to integers when every value fits.
 /// A float to an integer is refused: it is never what a checkpoint conversion means.
 ///
@@ -23,21 +23,21 @@
 /// \see snicholls::ml::minifloat (core's `ml/minifloat.hpp`), formats::tensor_view.
 ///
 /// \impls
-/// `constexpr` tables over the enumeration; `convert` is a loop per element.
+/// `constexpr` tables over the enumeration; `convert_elements` is a loop per element.
 ///
 /// \contracts
-/// Every function but `convert` is `constexpr` and `noexcept`. `convert` writes nothing on failure. Elements are
+/// Every function but `convert_elements` is `constexpr` and `noexcept`. `convert_elements` writes nothing on failure. Elements are
 /// little-endian, as every supported format stores them.
 ///
 /// \errors
-/// `convert`: `bad_shape` when the spans do not hold the same count, `unsupported` for a float to an integer,
+/// `convert_elements`: `bad_shape` when the spans do not hold the same count, `unsupported` for a float to an integer,
 /// `out_of_bounds` for an integer that does not fit the target (or a bool other than 0 or 1).
 ///
 /// \examples
 /// \snippet dtype_demo.cpp dtype
 ///
 /// \perf
-/// benchmarks/dtype_benchmark.cpp: `convert` bf16 to f32 against the hand-written loop.
+/// benchmarks/dtype_benchmark.cpp: `convert_elements` bf16 to f32 against the hand-written loop.
 ///
 /// \testing
 /// tests/dtype_test.cpp, demos/dtype_demo.cpp.
@@ -225,11 +225,11 @@ namespace detail::dtype_
 /// \return Nothing, or `bad_shape`, `unsupported` (a float to an integer) or `out_of_bounds` (an integer that does
 /// not fit); `out` is untouched on failure.
 /// Complexity: linear; two passes when the target is an integer (check, then write).
-[[nodiscard]] inline result<void> convert(dtype from, std::span<const std::byte> in, dtype to, std::span<std::byte> out)
+[[nodiscard]] inline result<void> convert_elements(dtype from, std::span<const std::byte> in, dtype to, std::span<std::byte> out)
 {
     const std::size_t a = size_of(from), b = size_of(to);
     if (in.size() % a != 0 || out.size() % b != 0 || in.size() / a != out.size() / b)
-        return fail(errc::bad_shape, "convert: the spans hold different numbers of elements");
+        return fail(errc::bad_shape, "convert_elements: the spans hold different numbers of elements");
     const std::size_t n = in.size() / a;
     if (is_float(to)) {
         for (std::size_t i = 0; i < n; ++i) {
@@ -240,10 +240,10 @@ namespace detail::dtype_
         return ok();
     }
     if (is_float(from))
-        return fail(errc::unsupported, "convert: a float to an integer is refused");
+        return fail(errc::unsupported, "convert_elements: a float to an integer is refused");
     for (std::size_t i = 0; i < n; ++i)
         if (!detail::dtype_::fits(to, detail::dtype_::load_integer(from, in.data() + i * a)))
-            return fail(errc::out_of_bounds, "convert: element " + std::to_string(i) + " does not fit " + std::string(safetensors_name(to)));
+            return fail(errc::out_of_bounds, "convert_elements: element " + std::to_string(i) + " does not fit " + std::string(safetensors_name(to)));
     for (std::size_t i = 0; i < n; ++i)
         detail::dtype_::store_integer(to, out.data() + i * b, detail::dtype_::load_integer(from, in.data() + i * a));
     return ok();
