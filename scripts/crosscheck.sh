@@ -7,21 +7,24 @@
 #
 #  Runs scripts/crosscheck.py in a venv of its own (numpy, safetensors, gguf-py's dependencies), never the system's.
 #
-#      scripts/crosscheck.sh [--venv DIR] [--gguf-py DIR] [--build DIR]
+#      scripts/crosscheck.sh [--venv DIR] [--gguf-py DIR] [--build DIR] [--llama-simple PATH]
 #
 #  --gguf-py is a directory holding llama.cpp's gguf-py `gguf` package (MIT); it is copied into the work directory
-#  and imported from the copy, so the original is only read. Defaults: MF_CROSSCHECK_VENV, MF_GGUF_PY, build/.
+#  and imported from the copy, so the original is only read. --llama-simple (llama.cpp's example, built out of
+#  tree) also loads our GPT-2 GGUF and generates. Defaults: MF_CROSSCHECK_VENV, MF_GGUF_PY, MF_LLAMA_SIMPLE, build/.
 #
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VENV="${MF_CROSSCHECK_VENV:-$ROOT/build-crosscheck/venv}"
 GGUF_PY="${MF_GGUF_PY:-}"
 BUILD="$ROOT/build"
+LLAMA_SIMPLE="${MF_LLAMA_SIMPLE:-}"
 while [ $# -gt 0 ]; do
     case "$1" in
         --venv) VENV="$2"; shift ;;
         --gguf-py) GGUF_PY="$2"; shift ;;
         --build) BUILD="$2"; shift ;;
+        --llama-simple) LLAMA_SIMPLE="$2"; shift ;;
         *) echo "crosscheck: unknown argument $1" >&2; exit 2 ;;
     esac
     shift
@@ -35,4 +38,4 @@ if [ ! -x "$VENV/bin/python" ]; then
     "$VENV/bin/pip" -q install numpy safetensors tqdm pyyaml requests
 fi
 cmake --build "$BUILD" --target mf_crosscheck >/dev/null
-"$VENV/bin/python" -I "$ROOT/scripts/crosscheck.py" --binary "$BUILD/tests/mf_crosscheck" --gguf-py "$WORK/gguf-py" --work "$WORK"
+"$VENV/bin/python" -I "$ROOT/scripts/crosscheck.py" --binary "$BUILD/tests/mf_crosscheck" --gguf-py "$WORK/gguf-py" --work "$WORK" ${LLAMA_SIMPLE:+--llama-simple "$LLAMA_SIMPLE"}

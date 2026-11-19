@@ -178,6 +178,7 @@ def main():
     ap.add_argument("--binary", required=True)
     ap.add_argument("--gguf-py", required=True, help="a directory holding gguf-py's gguf package")
     ap.add_argument("--work", required=True)
+    ap.add_argument("--llama-simple", help="llama.cpp's llama-simple, built out of tree: load our GPT-2 GGUF and generate")
     args = ap.parse_args()
     sys.path.insert(0, os.path.abspath(args.gguf_py))
     import gguf
@@ -254,6 +255,11 @@ def main():
     expected = {"theirs.pt\t%s\t%s\t%s\t%s" % (k, t, ",".join(str(d) for d in a.shape), sha(a.tobytes()))
                 for k, (t, a) in {"layer.weight": ("F32", arrays["f32"]), "layer.bias": ("F16", arrays["f16"]), "steps": ("I64", arrays["i64"])}.items()}
     ok &= compare("a torch.save-shaped zip, read by ours", run_ours(args.binary, "read", p), expected)
+    if args.llama_simple:
+        r = subprocess.run([args.llama_simple, "-m", files["gpt2.gguf"], "-n", "4", "ab"], capture_output=True, text=True, timeout=300)
+        loaded = r.returncode == 0 and "decoded" in (r.stdout + r.stderr)
+        print("crosscheck: %-34s %s" % ("llama.cpp loads and runs gpt2.gguf", "yes" if loaded else "NO:\n" + r.stderr[-2000:]))
+        ok &= loaded
     print("crosscheck: %s" % ("all agree" if ok else "DIFFERENCES FOUND"))
     return 0 if ok else 1
 
