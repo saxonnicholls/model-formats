@@ -119,6 +119,6 @@ TEST(PytorchPickle, RefusesMalformedPrograms)
     for (int i = 0; i < 100; ++i)
         deep.op(']');
     deep.op('.');
-    EXPECT_EQ(unpickle(deep.out, {.max_objects = 50}).unwrap_err_unchecked().code, errc::too_large);
-    EXPECT_EQ(unpickle(deep.out, {.max_stack = 10}).unwrap_err_unchecked().code, errc::too_large);
+    EXPECT_EQ(unpickle(deep.out, unpickle_limits{50, 1u << 24, 1u << 20}).unwrap_err_unchecked().code, errc::too_large);
+    EXPECT_EQ(unpickle(deep.out, unpickle_limits{1u << 24, 1u << 24, 10}).unwrap_err_unchecked().code, errc::too_large);
 }

@@ -107,9 +107,18 @@ namespace snicholls::formats::hub
     return true;
 }
 
+/// \brief The process environment as ts-moveables' configuration, with no .env files (huggingface_hub reads none).
+/// \return The configuration.
+[[nodiscard]] inline config environment_config()
+{
+    config_sources s;
+    s.env_files.clear();
+    return load_config(s);
+}
+
 /// \brief The cache directory `huggingface_hub` would use. \param env The configuration (by default the process
 /// environment, no .env files). \return The directory.
-[[nodiscard]] inline std::filesystem::path default_cache_dir(const config& env = load_config({.env_files = {}}))
+[[nodiscard]] inline std::filesystem::path default_cache_dir(const config& env = environment_config())
 {
     if (const std::string* c = env.raw("HF_HUB_CACHE"); c && !c->empty())
         return *c;

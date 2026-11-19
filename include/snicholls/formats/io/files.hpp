@@ -150,7 +150,10 @@ template <typename Produce>
     if (path.has_parent_path())
         std::filesystem::create_directories(path.parent_path(), ec);
     const std::filesystem::path tmp = path.string() + ".partial-" + std::to_string(::getpid());
-    auto region = mapped_region::open(tmp.string(), {.create = true, .truncate = true});
+    mapped_region_options mo;
+    mo.create = true;
+    mo.truncate = true;
+    auto region = mapped_region::open(tmp.string(), mo);
     if (region.is_err())
         return err(io_error(tmp, "cannot create", region.unwrap_err_unchecked()));
     std::size_t at = 0;

@@ -62,7 +62,12 @@ TEST(HubCache, RefsLinksAndOfflineResolution)
 TEST(HubCache, DefaultDirectoryFollowsTheEnvironment)
 {
     using snicholls::load_config;
-    const auto with = [](std::map<std::string, std::string> env) { return default_cache_dir(load_config({.env_files = {}, .environment = env})); };
+    const auto with = [](std::map<std::string, std::string> env) {
+        snicholls::config_sources s;
+        s.env_files.clear();
+        s.environment = std::move(env);
+        return default_cache_dir(load_config(s));
+    };
     EXPECT_EQ(with({{"HF_HUB_CACHE", "/a"}, {"HF_HOME", "/b"}}), std::filesystem::path("/a"));
     EXPECT_EQ(with({{"HF_HOME", "/b"}}), std::filesystem::path("/b/hub"));
     EXPECT_EQ(with({{"XDG_CACHE_HOME", "/x"}}), std::filesystem::path("/x/huggingface/hub"));

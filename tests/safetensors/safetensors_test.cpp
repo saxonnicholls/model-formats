@@ -95,7 +95,7 @@ TEST(SafetensorsParse, ValidatesSizesBoundsOverlapsAndHoles)
               errc::overlap);
     const auto hole = file_of(R"({"a":{"dtype":"F32","shape":[1],"data_offsets":[4,8]}})", 8);
     EXPECT_EQ(code_of(hole), errc::overlap);
-    EXPECT_TRUE(st::parse(hole, {.allow_holes = true}).is_ok());
+    EXPECT_TRUE(st::parse(hole, st::parse_options{100000000, true}).is_ok());
     EXPECT_EQ(code_of(file_of(R"({"a":{"dtype":"F32","shape":[1],"data_offsets":[0,4]}})", 6)), errc::overlap);   // trailing bytes
     EXPECT_EQ(code_of(file_of(R"({"a":{"dtype":"F32","shape":[4611686018427387904,4],"data_offsets":[0,4]}})", 4)), errc::bad_shape);
 }

@@ -111,7 +111,7 @@ struct hub_options
     /// \brief Options from the environment: `HF_ENDPOINT`, `HF_TOKEN` (or `HUGGING_FACE_HUB_TOKEN`), `HF_HUB_OFFLINE`
     /// and the cache variables. \param env The configuration (the process environment by default, no .env files).
     /// \return The options.
-    [[nodiscard]] static hub_options from_environment(const config& env = load_config({.env_files = {}}))
+    [[nodiscard]] static hub_options from_environment(const config& env = environment_config())
     {
         hub_options o;
         if (const std::string* e = env.raw("HF_ENDPOINT"); e && !e->empty())

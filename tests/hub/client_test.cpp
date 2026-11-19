@@ -193,13 +193,18 @@ TEST(HubClient, OfflineUsesTheCacheOnly)
 TEST(HubClient, OptionsFromTheEnvironment)
 {
     using snicholls::load_config;
-    const auto o = hub_options::from_environment(load_config(
-        {.env_files = {}, .environment = std::map<std::string, std::string>{{"HF_TOKEN", "hf_x"}, {"HF_HUB_OFFLINE", "1"}, {"HF_ENDPOINT", "https://mirror.example/"}, {"HF_HOME", "/h"}}}));
+    const auto env = [](std::map<std::string, std::string> e) {
+        snicholls::config_sources s;
+        s.env_files.clear();
+        s.environment = std::move(e);
+        return load_config(s);
+    };
+    const auto o = hub_options::from_environment(env({{"HF_TOKEN", "hf_x"}, {"HF_HUB_OFFLINE", "1"}, {"HF_ENDPOINT", "https://mirror.example/"}, {"HF_HOME", "/h"}}));
     EXPECT_EQ(o.token->reveal(), "hf_x");
     EXPECT_TRUE(o.offline);
     EXPECT_EQ(o.endpoint, "https://mirror.example");
     EXPECT_EQ(o.cache_dir, std::filesystem::path("/h/hub"));
-    const auto none = hub_options::from_environment(load_config({.env_files = {}, .environment = std::map<std::string, std::string>{}}));
+    const auto none = hub_options::from_environment(env({}));
     EXPECT_FALSE(none.token.has_value());
     EXPECT_FALSE(none.offline);
 }

@@ -45,7 +45,7 @@ TEST(Zip, Zip64RecordsAreReadAndWritten)
 {
     const std::string a = "zip64";
     const std::vector<zip::member> m{{"a", bytes(a)}};
-    const auto w = zip::write(m, {.alignment = 1, .force_zip64 = true});
+    const auto w = zip::write(m, zip::write_options{1, true});
     const auto r = zip::parse(*w);
     ASSERT_TRUE(r.is_ok()) << r.unwrap_err_unchecked().what();
     EXPECT_TRUE(r->zip64);
@@ -78,7 +78,7 @@ TEST(Zip, RefusesMalformedArchives)
     EXPECT_EQ(code(std::vector<std::byte>(100)), errc::bad_magic);
     const std::string a = "abc";
     const std::vector<zip::member> m{{"a", bytes(a)}};
-    auto w = *zip::write(m, {.alignment = 1});
+    auto w = *zip::write(m, zip::write_options{1, false});
     auto compressed = w;
     const auto cd = zip::parse(w)->entries[0].offset + 3;   // the central directory follows the data
     compressed[cd + 10] = std::byte{8};                    // method: deflate
@@ -96,7 +96,7 @@ TEST(Zip, DuplicateAndOverlappingMembersAreRefused)
 {
     const std::string a = "abc";
     const std::vector<zip::member> m{{"a", bytes(a)}, {"b", bytes(a)}};
-    auto w = *zip::write(m, {.alignment = 1});
+    auto w = *zip::write(m, zip::write_options{1, false});
     const auto r = zip::parse(w);
     // rename b to a in both headers: same length, so the archive stays well-formed
     for (std::size_t i = 0; i + 1 < w.size(); ++i)
