@@ -7,6 +7,9 @@ Read and write the machine-learning model file formats, and download models from
 snicholls libraries (the ML training library first). C++20, header-only, namespace `snicholls::formats`, include root
 `<snicholls/formats/...>`.
 
+**Documentation:** <https://saxonnicholls.github.io/model-formats/> (the API reference, built from the headers on every
+push to `main` and for each release tag).
+
 | Format | Read | Write | Notes |
 |---|---|---|---|
 | safetensors | yes, zero-copy, validated | yes, aligned, deterministic | every dtype: F64 F32 F16 BF16 F8_E4M3 F8_E5M2 I8-I64 U8-U64 BOOL; `__metadata__`; sharded `model.safetensors.index.json` |
