@@ -105,7 +105,8 @@ huggingface.co; never more than 200 MB).
 
 **Cross-checks** (`make crosscheck`, `scripts/crosscheck.sh --gguf-py <llama.cpp>/gguf-py`): gguf-py, the
 `safetensors` package and numpy read our files, and our readers read theirs (including a torch.save-shaped zip
-pickled by Python), in a venv of the script's own. Run it after any change to a reader or writer.
+pickled by Python), in a venv of the script's own; with `--llama-simple <path>` (llama.cpp's example, built out of
+tree) it also loads our GPT-2 GGUF in llama.cpp and generates. Run it after any change to a reader or writer.
 
 ## Demos (MUST)
 
