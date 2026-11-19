@@ -1,0 +1,42 @@
+/// \defgroup formats model-formats
+/// \brief The shared vocabulary: errors, dtypes, tensors, the model configuration and the vocabulary.
+
+/// \defgroup safetensors safetensors
+/// \ingroup formats
+/// \brief safetensors files and sharded indexes.
+
+/// \defgroup gguf GGUF
+/// \ingroup formats
+/// \brief GGUF files, ggml types, the standard keys and the metadata mapping onto core.
+
+/// \defgroup hf Hugging Face
+/// \ingroup formats
+/// \brief config.json, tokenizer.json and checkpoint tensor names.
+
+/// \defgroup numpy NumPy
+/// \ingroup formats
+/// \brief .npy and .npz.
+
+/// \defgroup llmc llm.c
+/// \ingroup formats
+/// \brief llm.c's GPT-2 checkpoint and token shard.
+
+/// \defgroup pytorch PyTorch
+/// \ingroup formats
+/// \brief torch.save archives, read through a restricted unpickler.
+
+/// \defgroup archive Archives
+/// \ingroup formats
+/// \brief Stored zip archives with ZIP64.
+
+/// \defgroup convert Conversion
+/// \ingroup formats
+/// \brief Between formats, and model-level export.
+
+/// \defgroup io Files
+/// \ingroup formats
+/// \brief Mapped reading, atomic writing, model directories (ts-moveables).
+
+/// \defgroup hub Hugging Face Hub
+/// \ingroup formats
+/// \brief The Hub client and its cache (ts-moveables' HTTP and TLS).

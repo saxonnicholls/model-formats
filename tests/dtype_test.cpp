@@ -134,3 +134,38 @@ TEST(FormatsDtype, EmptyConvertsToEmpty)
 {
     EXPECT_TRUE(convert_elements(dtype::f32, {}, dtype::bf16, {}).is_ok());
 }
+
+TEST(FormatsDtype, FastPathsAgreeWithTheGeneralPath)
+{
+    // every bf16 and every 8-bit float to f32, and f32 to bf16, against core's to_double / to_minifloat
+    std::vector<std::uint16_t> all(65536);
+    for (std::size_t i = 0; i < all.size(); ++i)
+        all[i] = static_cast<std::uint16_t>(i);
+    std::vector<float> f(65536);
+    ASSERT_TRUE(convert_elements(dtype::bf16, std::as_bytes(std::span(all)), dtype::f32, std::as_writable_bytes(std::span(f))).is_ok());
+    for (std::size_t i = 0; i < all.size(); ++i) {
+        const double want = snicholls::ml::to_double(snicholls::ml::bfloat16::from_bits(all[i]));
+        if (want != want)
+            EXPECT_NE(f[i], f[i]);
+        else
+            EXPECT_EQ(f[i], static_cast<float>(want)) << i;
+    }
+    for (const dtype t : {dtype::f8_e4m3, dtype::f8_e5m2}) {
+        std::vector<std::uint8_t> b(256);
+        for (std::size_t i = 0; i < 256; ++i)
+            b[i] = static_cast<std::uint8_t>(i);
+        std::vector<float> g(256);
+        ASSERT_TRUE(convert_elements(t, std::as_bytes(std::span(b)), dtype::f32, std::as_writable_bytes(std::span(g))).is_ok());
+        for (std::size_t i = 0; i < 256; ++i) {
+            const double want = t == dtype::f8_e4m3 ? snicholls::ml::to_double(snicholls::ml::float8_e4m3::from_bits(static_cast<std::uint32_t>(i)))
+                                                    : snicholls::ml::to_double(snicholls::ml::float8_e5m2::from_bits(static_cast<std::uint32_t>(i)));
+            if (want == want)
+                EXPECT_EQ(g[i], static_cast<float>(want));
+        }
+    }
+    std::vector<std::uint16_t> back(65536);
+    ASSERT_TRUE(convert_elements(dtype::f32, std::as_bytes(std::span(f)), dtype::bf16, std::as_writable_bytes(std::span(back))).is_ok());
+    for (std::size_t i = 0; i < all.size(); ++i)
+        if (f[i] == f[i])
+            EXPECT_EQ(back[i], snicholls::ml::to_minifloat<snicholls::ml::bfloat16>(static_cast<double>(f[i])).bits) << i;
+}

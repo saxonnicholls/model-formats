@@ -37,7 +37,8 @@
 /// \snippet dtype_demo.cpp dtype
 ///
 /// \perf
-/// benchmarks/dtype_benchmark.cpp: `convert_elements` bf16 to f32 against the hand-written loop.
+/// benchmarks/dtype_benchmark.cpp: `convert_elements` bf16 to f32 against the hand-written loop (BENCHMARKS.md).
+/// Copies, bf16 to and from f32 and the 8-bit floats to f32 take fast paths; the rest go through `double`.
 ///
 /// \testing
 /// tests/dtype_test.cpp, demos/dtype_demo.cpp.
@@ -61,6 +62,7 @@
 
 #include <bit>
 #include <cstddef>
+#include <cstring>
 #include <cstdint>
 #include <optional>
 #include <span>
@@ -231,6 +233,30 @@ namespace detail::dtype_
     if (in.size() % a != 0 || out.size() % b != 0 || in.size() / a != out.size() / b)
         return fail(errc::bad_shape, "convert_elements: the spans hold different numbers of elements");
     const std::size_t n = in.size() / a;
+    if (from == to) {   // the fast paths: a copy, and the widenings and narrowings checkpoints use
+        std::memcpy(out.data(), in.data(), in.size());
+        return ok();
+    }
+    if (from == dtype::bf16 && to == dtype::f32) {
+        for (std::size_t i = 0; i < n; ++i) {   // memcpy per element: the compiler vectorises it (a little-endian host)
+            std::uint16_t h;
+            std::memcpy(&h, in.data() + 2 * i, 2);
+            const std::uint32_t w = std::uint32_t{h} << 16;
+            std::memcpy(out.data() + 4 * i, &w, 4);
+        }
+        return ok();
+    }
+    if (from == dtype::f32 && to == dtype::bf16) {
+        for (std::size_t i = 0; i < n; ++i)
+            store_le(out.data() + 2 * i, ml::to_bfloat16(std::bit_cast<float>(load_le<std::uint32_t>(in.data() + 4 * i))).bits);
+        return ok();
+    }
+    if (to == dtype::f32 && (from == dtype::f8_e4m3 || from == dtype::f8_e5m2)) {
+        const auto& table = from == dtype::f8_e4m3 ? ml::decode_table<ml::float8_e4m3> : ml::decode_table<ml::float8_e5m2>;
+        for (std::size_t i = 0; i < n; ++i)
+            store_le(out.data() + 4 * i, std::bit_cast<std::uint32_t>(table[std::to_integer<std::uint8_t>(in[i])]));
+        return ok();
+    }
     if (is_float(to)) {
         for (std::size_t i = 0; i < n; ++i) {
             const double v = is_float(from) ? detail::dtype_::load_float(from, in.data() + i * a)
