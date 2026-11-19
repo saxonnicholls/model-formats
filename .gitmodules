@@ -1,0 +1,12 @@
+[submodule "third_party/core"]
+	path = third_party/core
+	url = https://github.com/saxonnicholls/core.git
+	shallow = true
+[submodule "third_party/ts-moveables"]
+	path = third_party/ts-moveables
+	url = https://github.com/saxonnicholls/ts-moveables.git
+	shallow = true
+[submodule "third_party/core-adapters"]
+	path = third_party/core-adapters
+	url = https://github.com/saxonnicholls/core-adapters.git
+	shallow = true

@@ -1,0 +1,18 @@
+# model-formats - the demos. demos/ mirrors include/snicholls/formats/: <sub>/<name>.hpp has
+# demos/<sub>/<name>_demo.cpp, registered here. Each prints what it does and exits non-zero if a result is not what
+# it documents, so each is a CTest (label demo). Regions //! [tag] are the documentation's \snippet examples.
+
+function(model_formats_add_demo name target)
+    string(MAKE_C_IDENTIFIER "${name}" _id)
+    add_executable(demo_${_id} ${name}_demo.cpp)
+    target_link_libraries(demo_${_id} PRIVATE ${target})
+    model_formats_compile_options(demo_${_id})
+    add_test(NAME demo.${name} COMMAND demo_${_id})
+    set_tests_properties(demo.${name} PROPERTIES LABELS demo)
+endfunction()
+
+model_formats_add_demo(version snicholls::formats)
+model_formats_add_demo(error snicholls::formats)
+model_formats_add_demo(dtype snicholls::formats)
+model_formats_add_demo(tensor snicholls::formats)
+model_formats_add_demo(safetensors/safetensors snicholls::formats)
