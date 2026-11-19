@@ -99,17 +99,24 @@ target_link_libraries(snicholls_formats_io INTERFACE snicholls::formats snicholl
 target_compile_features(snicholls_formats_io INTERFACE cxx_std_20)
 
 if(MODEL_FORMATS_WITH_HUB)
+    # Homebrew: the newest OpenSSL installed, so its headers agree with whatever sits in /usr/local/include (which the
+    # compiler searches before any -isystem directory) and with the library linked
     if(APPLE AND NOT OPENSSL_ROOT_DIR)
-        execute_process(COMMAND brew --prefix openssl@3 OUTPUT_VARIABLE _mf_openssl
-                        OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET RESULT_VARIABLE _mf_brew)
-        if(_mf_brew EQUAL 0 AND EXISTS "${_mf_openssl}")
-            set(OPENSSL_ROOT_DIR "${_mf_openssl}")
-        endif()
+        foreach(_mf_formula openssl@4 openssl@3)
+            execute_process(COMMAND brew --prefix ${_mf_formula} OUTPUT_VARIABLE _mf_openssl
+                            OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET RESULT_VARIABLE _mf_brew)
+            if(_mf_brew EQUAL 0 AND EXISTS "${_mf_openssl}/include/openssl/ssl.h")
+                set(OPENSSL_ROOT_DIR "${_mf_openssl}")
+                break()
+            endif()
+        endforeach()
     endif()
     find_package(OpenSSL 3 REQUIRED)
     add_library(snicholls_formats_hub INTERFACE)
     add_library(snicholls::formats_hub ALIAS snicholls_formats_hub)
     target_link_libraries(snicholls_formats_hub INTERFACE snicholls::formats_io OpenSSL::SSL OpenSSL::Crypto)
+    # The 3.0 API: ts-moveables' tls/openssl.hpp calls SSL_set1_host, deprecated in OpenSSL 4 (erratum/ts-moveables.md)
+    target_compile_definitions(snicholls_formats_hub INTERFACE OPENSSL_API_COMPAT=0x30000000L)
     target_compile_features(snicholls_formats_hub INTERFACE cxx_std_20)
 endif()
 
