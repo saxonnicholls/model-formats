@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['rank_0',['rank',['../structsnicholls_1_1formats_1_1tensor__shape.html#a9c35608ebe9e1ed9a17b957885091f21',1,'snicholls::formats::tensor_shape']]],
+  ['read_5fany_1',['read_any',['../convert_8hpp.html#a64e32477d6104df4a097e1684b9a9717',1,'snicholls::formats::convert']]],
+  ['read_5fmodel_5fconfig_2',['read_model_config',['../metadata_8hpp.html#aa60003ab3ef0df045022a08dffc6f51a',1,'snicholls::formats::gguf']]],
+  ['read_5foptions_3',['read_options',['../structsnicholls_1_1formats_1_1convert_1_1read__options.html',1,'snicholls::formats::convert']]],
+  ['read_5fvocabulary_4',['read_vocabulary',['../metadata_8hpp.html#a92e624f6dd6c329cebb8363401ca0d23',1,'snicholls::formats::gguf']]],
+  ['repetition_5fpenalty_5',['repetition_penalty',['../structsnicholls_1_1formats_1_1hf_1_1generation__config.html#ab138c7ea0a386c09926db24725c5cf8e',1,'snicholls::formats::hf::generation_config']]],
+  ['repo_6',['repo',['../structsnicholls_1_1formats_1_1hub_1_1repo__info.html#adb897f01e0b4e5fd8d9dadc8064c2090',1,'snicholls::formats::hub::repo_info']]],
+  ['repo_5ffile_7',['repo_file',['../structsnicholls_1_1formats_1_1hub_1_1repo__file.html',1,'snicholls::formats::hub']]],
+  ['repo_5finfo_8',['repo_info',['../structsnicholls_1_1formats_1_1hub_1_1repo__info.html',1,'snicholls::formats::hub']]],
+  ['resolve_9',['resolve',['../classsnicholls_1_1formats_1_1hub_1_1client.html#a74cc41fb7618d91b989d12e7ead44e92',1,'snicholls::formats::hub::client']]],
+  ['resolve_5foffline_10',['resolve_offline',['../classsnicholls_1_1formats_1_1hub_1_1cache.html#a646fb70b1a85b36acd65a211db98cb4e',1,'snicholls::formats::hub::cache']]],
+  ['result_11',['result',['../error_8hpp.html#a8669969ceb54a9ec2bbbdd0a272c8a97',1,'snicholls::formats']]],
+  ['resumed_12',['resumed',['../structsnicholls_1_1formats_1_1hub_1_1download__report.html#ab748e1a24125c41f78bad8116d269553',1,'snicholls::formats::hub::download_report']]],
+  ['reversed_13',['reversed',['../structsnicholls_1_1formats_1_1tensor__shape.html#a0239c06e7332c21c9c33a79570f341ac',1,'snicholls::formats::tensor_shape']]],
+  ['revision_14',['revision',['../structsnicholls_1_1formats_1_1hub_1_1repo__info.html#a8bf738a5c4198569c64dcca86ee4011c',1,'snicholls::formats::hub::repo_info']]],
+  ['role_15',['role',['../names_8hpp.html#a631f32d6f59ae2c1f0b571ada632bf16',1,'snicholls::formats::hf']]],
+  ['root_16',['root',['../structsnicholls_1_1formats_1_1io_1_1model__dir.html#a2217d37a9ad9d3374b62da1fde29bdda',1,'snicholls::formats::io::model_dir::root'],['../structsnicholls_1_1formats_1_1pytorch_1_1pickled.html#a91526a358f1c3867c496ee3533698a18',1,'snicholls::formats::pytorch::pickled::root']]],
+  ['router_17',['router',['../names_8hpp.html#a631f32d6f59ae2c1f0b571ada632bf16af3395cd54cf857ddf8f2056768ff49ae',1,'snicholls::formats::hf']]],
+  ['router_5fbias_18',['router_bias',['../names_8hpp.html#a631f32d6f59ae2c1f0b571ada632bf16a39094aaa8e74203ab019a26f8cfed061',1,'snicholls::formats::hf']]],
+  ['row_5fbytes_19',['row_bytes',['../ggml__types_8hpp.html#a1353acac1149a373790e8f7fe685c527',1,'snicholls::formats::gguf']]]
+];

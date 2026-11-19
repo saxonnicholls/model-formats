@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['cache_5fdir_0',['cache_dir',['../structsnicholls_1_1formats_1_1hub_1_1hub__options.html#ac4cd29b6b4816d274847a4e4bedb6bf8',1,'snicholls::formats::hub::hub_options']]],
+  ['cached_1',['cached',['../structsnicholls_1_1formats_1_1hub_1_1download__report.html#a7d6fb5f1c1d67251a57b5f80c8cffece',1,'snicholls::formats::hub::download_report']]],
+  ['causal_2',['causal',['../namespacesnicholls_1_1formats_1_1gguf_1_1attention.html#ae099735a823e40ccb478e2dac6464a02',1,'snicholls::formats::gguf::attention']]],
+  ['channels_3',['channels',['../structsnicholls_1_1formats_1_1llmc_1_1gpt2__shape.html#a83688816b08eaf6f499824fbb93a0d68',1,'snicholls::formats::llmc::gpt2_shape']]],
+  ['chat_5ftemplate_4',['chat_template',['../namespacesnicholls_1_1formats_1_1gguf_1_1tokenizer.html#a573997ccc2a56bf57c6375bea54e682a',1,'snicholls::formats::gguf::tokenizer']]],
+  ['chat_5ftemplates_5',['chat_templates',['../structsnicholls_1_1formats_1_1hf_1_1tokenizer.html#a630cbadfaee86167e874f5533556816a',1,'snicholls::formats::hf::tokenizer']]],
+  ['checkpoint_5fmagic_6',['checkpoint_magic',['../llmc_8hpp.html#abfc9cc4917c2030f8ef184699fd9aa31',1,'snicholls::formats::llmc']]],
+  ['chunk_5fbytes_7',['chunk_bytes',['../structsnicholls_1_1formats_1_1hub_1_1hub__options.html#aba8761fcd62bccbcd2fe5be59c1fadf5',1,'snicholls::formats::hub::hub_options']]],
+  ['code_8',['code',['../structsnicholls_1_1formats_1_1error.html#a56ee7061b0113d2cd77bdfe0f38e1fc7',1,'snicholls::formats::error']]],
+  ['commit_9',['commit',['../structsnicholls_1_1formats_1_1hub_1_1repo__info.html#afc057f007f0693f0fa3bbd91c166cf12',1,'snicholls::formats::hub::repo_info']]],
+  ['config_10',['config',['../structsnicholls_1_1formats_1_1io_1_1model__dir.html#a1f2353d381f9bc7eb2f2ae6ec278ae48',1,'snicholls::formats::io::model_dir']]],
+  ['config_5ferror_11',['config_error',['../structsnicholls_1_1formats_1_1io_1_1model__dir.html#a4c69c0fc695dee70566681fb24b20b3c',1,'snicholls::formats::io::model_dir']]],
+  ['context_12',['context',['../structsnicholls_1_1formats_1_1model__config.html#a9540f613ae851dcc08b785cd0cb1527d',1,'snicholls::formats::model_config']]],
+  ['context_5flength_13',['context_length',['../namespacesnicholls_1_1formats_1_1gguf_1_1llm.html#aeab9f93349d59f2564033d58afc7bc39',1,'snicholls::formats::gguf::llm']]],
+  ['contiguous_14',['contiguous',['../structsnicholls_1_1formats_1_1pytorch_1_1tensor__entry.html#a16978584f36919b21cfda7d71765182d',1,'snicholls::formats::pytorch::tensor_entry']]],
+  ['count_15',['count',['../structsnicholls_1_1formats_1_1gguf_1_1value.html#a7c119392cd22e52e966365d85e013060',1,'snicholls::formats::gguf::value']]],
+  ['crc_16',['crc',['../structsnicholls_1_1formats_1_1zip_1_1entry.html#a7670ba5acefde97dea14fd8799b6db75',1,'snicholls::formats::zip::entry']]],
+  ['current_5fversion_17',['current_version',['../gguf_8hpp.html#ae53ee342bf56219a8f4bc5ca3fc651d9',1,'snicholls::formats::gguf']]]
+];

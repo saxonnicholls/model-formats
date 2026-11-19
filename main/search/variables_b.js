@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['magic_0',['magic',['../gguf_8hpp.html#ae201a00854e88b4c8bde9cfb9ccd4d7e',1,'snicholls::formats::gguf']]],
+  ['major_1',['major',['../structsnicholls_1_1formats_1_1version.html#a86f2ace7ae4be3b89c099769099606e2',1,'snicholls::formats::version']]],
+  ['max_5fdims_2',['max_dims',['../gguf_8hpp.html#ade95a2ddaa897fd29c0e631c34506bd2',1,'snicholls::formats::gguf']]],
+  ['max_5fdownload_5fbytes_3',['max_download_bytes',['../structsnicholls_1_1formats_1_1hub_1_1hub__options.html#af47aec46869655cf0b02aa80961b412a',1,'snicholls::formats::hub::hub_options']]],
+  ['max_5fheader_4',['max_header',['../structsnicholls_1_1formats_1_1safetensors_1_1parse__options.html#a7e26d315b4c4134f3ab42fcc0da6241b',1,'snicholls::formats::safetensors::parse_options']]],
+  ['max_5flength_5',['max_length',['../structsnicholls_1_1formats_1_1hf_1_1generation__config.html#a23702ac0591bd16455f123fc8f6a3256',1,'snicholls::formats::hf::generation_config']]],
+  ['max_5fmemo_6',['max_memo',['../structsnicholls_1_1formats_1_1pytorch_1_1unpickle__limits.html#a8e02c85001a8f047570048038d6d82fb',1,'snicholls::formats::pytorch::unpickle_limits']]],
+  ['max_5fmetadata_7',['max_metadata',['../structsnicholls_1_1formats_1_1gguf_1_1parse__options.html#ab43ce2f8b0824d26e1572ab17b9debf7',1,'snicholls::formats::gguf::parse_options']]],
+  ['max_5fnew_5ftokens_8',['max_new_tokens',['../structsnicholls_1_1formats_1_1hf_1_1generation__config.html#a77a213d5f8e2da6900d9afdc901b455d',1,'snicholls::formats::hf::generation_config']]],
+  ['max_5fobjects_9',['max_objects',['../structsnicholls_1_1formats_1_1pytorch_1_1unpickle__limits.html#ab14b5cf18ee51022a393909b42d600ca',1,'snicholls::formats::pytorch::unpickle_limits']]],
+  ['max_5frank_10',['max_rank',['../tensor_8hpp.html#afc8e3eeb4959d3db05330701a539e453',1,'snicholls::formats']]],
+  ['max_5fseq_11',['max_seq',['../structsnicholls_1_1formats_1_1llmc_1_1gpt2__shape.html#a7f526e1ef2865c52cc9376f6e98510c3',1,'snicholls::formats::llmc::gpt2_shape']]],
+  ['max_5fstack_12',['max_stack',['../structsnicholls_1_1formats_1_1pytorch_1_1unpickle__limits.html#ac1fdea571525a7634642d73f8f45fa43',1,'snicholls::formats::pytorch::unpickle_limits']]],
+  ['max_5ftensors_13',['max_tensors',['../structsnicholls_1_1formats_1_1gguf_1_1parse__options.html#a0dc335e4a3517635947d65351f86cb2d',1,'snicholls::formats::gguf::parse_options']]],
+  ['merges_14',['merges',['../structsnicholls_1_1formats_1_1vocabulary.html#ac8c7e6eea1544861af9fbf8003d8c4a4',1,'snicholls::formats::vocabulary::merges'],['../namespacesnicholls_1_1formats_1_1gguf_1_1tokenizer.html#abcb10734552b2c23d56bcf64b4c2b4fb',1,'snicholls::formats::gguf::tokenizer::merges']]],
+  ['message_15',['message',['../structsnicholls_1_1formats_1_1error.html#a5304615dd17e2416c4ff4d257903decf',1,'snicholls::formats::error']]],
+  ['metadata_16',['metadata',['../structsnicholls_1_1formats_1_1convert_1_1loaded.html#a22a497fb43dd6dd861f59a016a3c1bc5',1,'snicholls::formats::convert::loaded::metadata'],['../structsnicholls_1_1formats_1_1gguf_1_1file.html#a1d8e4f1f2e2a2e178b3267291221beb9',1,'snicholls::formats::gguf::file::metadata'],['../structsnicholls_1_1formats_1_1safetensors_1_1index.html#ac832fdb2dc5a4b470183556fe8e222fa',1,'snicholls::formats::safetensors::index::metadata'],['../structsnicholls_1_1formats_1_1safetensors_1_1file.html#ac307872536ae34e9abd6fcee45aa3a20',1,'snicholls::formats::safetensors::file::metadata']]],
+  ['minor_17',['minor',['../structsnicholls_1_1formats_1_1version.html#a9136148604eb601df92117b1baa3dd89',1,'snicholls::formats::version']]],
+  ['model_18',['model',['../structsnicholls_1_1formats_1_1io_1_1opened__model.html#afd9977e3ee6ee03cb90507cc1563cad5',1,'snicholls::formats::io::opened_model::model'],['../namespacesnicholls_1_1formats_1_1gguf_1_1tokenizer.html#ae893a394e0a792d4840c1d70ca030ea9',1,'snicholls::formats::gguf::tokenizer::model']]]
+];
