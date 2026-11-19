@@ -8,4 +8,4 @@ type, the standard keys, metadata to and from core's `transformer_config`), Hugg
 checkpoints and token shards, PyTorch zip checkpoints through a restricted unpickler, stored zip with ZIP64,
 conversion between formats and model-level export, memory-mapped files and Hugging Face model directories, the Hub
 client and its huggingface_hub-compatible cache, and the tools mf-inspect, mf-convert and mf-download.
-Pins core v0.16.0, ts-moveables v1.9.0, core-adapters v0.1.1.
+Pins core v0.16.0, ts-moveables v1.10.0, core-adapters v0.1.1.

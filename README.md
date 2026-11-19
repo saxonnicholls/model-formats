@@ -56,7 +56,7 @@ TLS and its file and mmap modules for the cache, and no other HTTP library (deci
 | Dependency | Path | Pinned to |
 |---|---|---|
 | snicholls-core | `third_party/core` | `v0.16.0` |
-| ts-moveables | `third_party/ts-moveables` | `v1.9.0` |
+| ts-moveables | `third_party/ts-moveables` | `v1.10.0` |
 | core-adapters | `third_party/core-adapters` | `v0.1.1` (nlohmann/json `v3.12.0`) |
 | GoogleTest, Google Benchmark | core's `third_party/` | `v1.18.0`, `v1.9.5` |
 

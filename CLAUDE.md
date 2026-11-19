@@ -91,7 +91,7 @@ Core's diamond rules (core CLAUDE.md "Versioning and the diamond"): `third_party
 added first so its copies inside ts-moveables and core-adapters are skipped; `snicholls_core_require(0.16.0)`; the
 top-level `CMakeLists.txt` ends with `snicholls_core_assert_single_version()`. core-adapters (`v0.1.1`) still pins core
 `v0.9.0`: `scripts/bootstrap.sh` checks its copy out at our commit until core-adapters is bumped in the family's
-dependency order; then the step does nothing. ts-moveables (`v1.9.0`) adds core only when no target exists, so its
+dependency order; then the step does nothing. ts-moveables (`v1.10.0`) adds core only when no target exists, so its
 copy is never reached. A core bump is `third_party: bump core vA.B.C -> vX.Y.Z`, one commit, gate green.
 
 ## Tests (MUST)
@@ -149,7 +149,7 @@ OpenSSL: on macOS CMake takes Homebrew's newest (`openssl@4`, else `@3`), so its
 | Dependency | Path | Pinned to | Used by |
 |---|---|---|---|
 | snicholls-core | `third_party/core` | `v0.16.0` | everything |
-| ts-moveables | `third_party/ts-moveables` | `v1.9.0` | `formats_io`, `formats_hub` |
+| ts-moveables | `third_party/ts-moveables` | `v1.10.0` | `formats_io`, `formats_hub` |
 | core-adapters (nlohmann/json `v3.12.0`) | `third_party/core-adapters` | `v0.1.1` | `formats` |
 | OpenSSL | the system | 3.x or 4.x | `formats_hub` (TLS, SHA-256 until core has it) |
 | GoogleTest, Google Benchmark | core's `third_party/` | `v1.18.0`, `v1.9.5` | tests, benchmarks |

@@ -1,4 +1,4 @@
-# ts-moveables errata (v1.9.0)
+# ts-moveables errata (v1.9.0, still in v1.10.0)
 
 ## tls/openssl.hpp: SSL_set1_host is deprecated in OpenSSL 4
 
