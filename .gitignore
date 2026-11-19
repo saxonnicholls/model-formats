@@ -11,3 +11,6 @@ xcuserdata/
 *.xcuserstate
 .vscode/
 .idea/
+
+# Local instructions (private paths)
+CLAUDE.local.md
