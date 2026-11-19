@@ -155,3 +155,16 @@ TEST(GgufMetadata, VocabularyRoundTrips)
     const auto nb = *none.write();
     EXPECT_EQ(read_vocabulary(*parse(nb)).unwrap_err_unchecked().code, errc::not_found);
 }
+
+TEST(GgufMetadata, ByteLevelVocabulariesAlwaysCarryMerges)
+{
+    // llama.cpp refuses a gpt2 tokenizer without tokenizer.ggml.merges, even when there are none
+    vocabulary v;
+    v.tokens = {"a", "b"};
+    writer w;
+    write_vocabulary(w, v);
+    const auto bytes = *w.write();
+    const auto f = parse(bytes);
+    ASSERT_NE(f->find(tokenizer::merges), nullptr);
+    EXPECT_EQ(f->find(tokenizer::merges)->count, 0u);
+}

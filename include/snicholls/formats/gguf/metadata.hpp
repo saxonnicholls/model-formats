@@ -389,7 +389,7 @@ inline void write_vocabulary(writer& w, const vocabulary& v, std::string_view ch
             scores.push_back(value_f32(s));
         w.set(tokenizer::scores, value_array(value_type::f32, std::move(scores)));
     }
-    if (!v.merges.empty())
+    if (!v.merges.empty() || v.kind == tokenizer_kind::byte_level_bpe)   // llama.cpp requires the key for gpt2, even empty
         w.set(tokenizer::merges, value_strings(v.merges));
     if (v.bos)
         w.set(tokenizer::bos_token_id, value_u32(*v.bos));
