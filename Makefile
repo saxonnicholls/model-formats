@@ -19,7 +19,7 @@ BUILD    ?= build
 CONFIG   ?= Release
 CMAKE_FLAGS ?=
 
-.PHONY: all bootstrap test test-werror asan docs check ubuntu crosscheck network benchmarks clean
+.PHONY: all bootstrap test test-werror asan docs demos check ubuntu crosscheck network benchmarks clean
 
 all: test
 
@@ -47,6 +47,9 @@ asan:
 docs:
 	cmake -S . -B build-docs -DMODEL_FORMATS_BUILD_TESTS=OFF -DMODEL_FORMATS_BUILD_TOOLS=OFF -DMODEL_FORMATS_BUILD_DOCS=ON
 	cmake --build build-docs --target docs
+
+demos:
+	BUILD=$(BUILD) CONFIG=$(CONFIG) CXX=$(CXX) scripts/run_demos.sh --all
 
 ubuntu:
 	scripts/test_ubuntu.sh

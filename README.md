@@ -71,6 +71,7 @@ checks its copy of core out at ours, so the build reaches one core version (see 
     scripts/bootstrap.sh
     make test-werror     # every CTest, warnings as errors
     make docs            # Doxygen, warnings as errors
+    make demos           # build and run every demo, output shown (scripts/run_demos.sh --all, or <name>...)
     make check           # version and mirror
     make ubuntu          # Ubuntu 24.04 in Docker: GCC 13 and Clang 18, Release, Debug, sanitizers
     make crosscheck      # gguf-py, safetensors and numpy against our files and theirs

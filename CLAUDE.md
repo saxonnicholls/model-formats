@@ -132,6 +132,7 @@ build).
     scripts/bootstrap.sh   # the submodules
     make test-werror       # macOS: every CTest, warnings as errors
     make docs              # Doxygen, warnings as errors
+    make demos             # build and run every demo with its output shown (scripts/run_demos.sh --all, or <name>...)
     make check             # version and mirror
     make ubuntu            # Ubuntu 24.04 in Docker: GCC 13 and Clang 18, Release, Debug, ASan+UBSan under both
     make crosscheck        # the Python cross-check
