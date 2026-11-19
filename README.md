@@ -1,5 +1,8 @@
 # model-formats
 
+[![CI](https://github.com/saxonnicholls/model-formats/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/saxonnicholls/model-formats/actions/workflows/ci.yml)
+[![Docs](https://img.shields.io/badge/docs-doxygen-blue)](https://saxonnicholls.github.io/model-formats/)
+
 Read and write the machine-learning model file formats, and download models from the Hugging Face Hub, for the
 snicholls libraries (the ML training library first). C++20, header-only, namespace `snicholls::formats`, include root
 `<snicholls/formats/...>`.
