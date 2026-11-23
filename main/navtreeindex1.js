@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"index.html#autotoc_md3":[2],
 "index_8hpp.html":[3,0,0,0],
 "json_8hpp_source.html":[6,0,0,0,2,2],
 "keys_8hpp.html":[3,0,1,2],
@@ -23,7 +24,7 @@ var NAVTREEINDEX1 =
 "metadata_8hpp.html#a92e624f6dd6c329cebb8363401ca0d23":[4,0,0,0,0,23],
 "metadata_8hpp.html#aa60003ab3ef0df045022a08dffc6f51a":[4,0,0,0,0,22],
 "metadata_8hpp.html#aee602459e0f867ea40948a305f8b707a":[4,0,0,0,0,45],
-"model__config_8hpp.html":[3,0,12],
+"model__config_8hpp.html":[3,0,13],
 "model__config_8hpp.html#a362244db674384b91240ec17c0cb7c39":[4,0,0,0,26],
 "model__config_8hpp.html#a3f84ab5df9b4e4d0dbdda9f3ac16ff37":[4,0,0,0,14],
 "model__config_8hpp.html#a41f873d06486cc85712e4fbea71db0e9":[4,0,0,0,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "structsnicholls_1_1formats_1_1gguf_1_1value.html#aaed6b7c867f6151527f28acc5443565f":[4,0,0,0,0,6,2],
 "structsnicholls_1_1formats_1_1gguf_1_1value.html#aaed6b7c867f6151527f28acc5443565f":[5,0,0,0,2,1,2],
 "structsnicholls_1_1formats_1_1gguf_1_1value.html#ad301c2f52ae79503bb5775713e148510":[4,0,0,0,0,6,9],
-"structsnicholls_1_1formats_1_1gguf_1_1value.html#ad301c2f52ae79503bb5775713e148510":[5,0,0,0,2,1,9],
-"structsnicholls_1_1formats_1_1gguf_1_1value.html#ae21de56c6de7aa4ef3723945dc30f5ae":[4,0,0,0,0,6,11]
+"structsnicholls_1_1formats_1_1gguf_1_1value.html#ad301c2f52ae79503bb5775713e148510":[5,0,0,0,2,1,9]
 };

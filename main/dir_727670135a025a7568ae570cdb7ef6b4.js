@@ -13,6 +13,7 @@ var dir_727670135a025a7568ae570cdb7ef6b4 =
     [ "safetensors", "dir_f9a6e2617175ee08533af0fd871de74b.html", "dir_f9a6e2617175ee08533af0fd871de74b" ],
     [ "dtype.hpp", "dtype_8hpp.html", "dtype_8hpp" ],
     [ "error.hpp", "error_8hpp.html", "error_8hpp" ],
+    [ "formats.hpp", "formats_8hpp.html", null ],
     [ "model_config.hpp", "model__config_8hpp.html", "model__config_8hpp" ],
     [ "tensor.hpp", "tensor_8hpp.html", "tensor_8hpp" ],
     [ "version.hpp", "version_8hpp.html", "version_8hpp" ],

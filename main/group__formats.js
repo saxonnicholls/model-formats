@@ -12,6 +12,7 @@ var group__formats =
     [ "Hugging Face Hub", "group__hub.html", "group__hub" ],
     [ "dtype.hpp", "dtype_8hpp.html", null ],
     [ "error.hpp", "error_8hpp.html", null ],
+    [ "formats.hpp", "formats_8hpp.html", null ],
     [ "model_config.hpp", "model__config_8hpp.html", null ],
     [ "tensor.hpp", "tensor_8hpp.html", null ],
     [ "version.hpp", "version_8hpp.html", null ],

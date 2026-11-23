@@ -59,9 +59,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"index_8hpp.html",
+"index.html#autotoc_md3",
 "structsnicholls_1_1formats_1_1gguf_1_1value.html#ae21de56c6de7aa4ef3723945dc30f5ae",
-"tensor_8hpp.html"
+"structsnicholls_1_1formats_1_1zip_1_1write__options.html#abfd0d76e8f6b2aac9fd374578d4526d2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

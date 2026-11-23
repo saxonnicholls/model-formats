@@ -28,8 +28,9 @@ var searchData=
   ['format_25',['format',['../structsnicholls_1_1formats_1_1convert_1_1loaded.html#ac59ad435b63031f9ef14f5052c8ace6b',1,'snicholls::formats::convert::loaded']]],
   ['format_5ffrom_5fextension_26',['format_from_extension',['../convert_8hpp.html#a0b41515d1d00eddb13267fc12a91c59a',1,'snicholls::formats::convert']]],
   ['formats_27',['formats',['../group__formats.html',1,'model-formats'],['../index.html',1,'model-formats']]],
-  ['freq_5fbase_28',['freq_base',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#a5ab3a0b671ef4ed7d4a229d33eee0cce',1,'snicholls::formats::gguf::rope']]],
-  ['from_29',['from',['../structsnicholls_1_1formats_1_1tensor.html#ab2c40929a8cb340b71d01adb9551be2d',1,'snicholls::formats::tensor']]],
-  ['from_5fdtype_30',['from_dtype',['../ggml__types_8hpp.html#a4985af405eae5b83ac48d7af2332e2a8',1,'snicholls::formats::gguf']]],
-  ['from_5fenvironment_31',['from_environment',['../structsnicholls_1_1formats_1_1hub_1_1hub__options.html#a7fdc4f73624451bceece6d719e276e1d',1,'snicholls::formats::hub::hub_options']]]
+  ['formats_2ehpp_28',['formats.hpp',['../formats_8hpp.html',1,'']]],
+  ['freq_5fbase_29',['freq_base',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#a5ab3a0b671ef4ed7d4a229d33eee0cce',1,'snicholls::formats::gguf::rope']]],
+  ['from_30',['from',['../structsnicholls_1_1formats_1_1tensor.html#ab2c40929a8cb340b71d01adb9551be2d',1,'snicholls::formats::tensor']]],
+  ['from_5fdtype_31',['from_dtype',['../ggml__types_8hpp.html#a4985af405eae5b83ac48d7af2332e2a8',1,'snicholls::formats::gguf']]],
+  ['from_5fenvironment_32',['from_environment',['../structsnicholls_1_1formats_1_1hub_1_1hub__options.html#a7fdc4f73624451bceece6d719e276e1d',1,'snicholls::formats::hub::hub_options']]]
 ];

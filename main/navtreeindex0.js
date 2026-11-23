@@ -124,6 +124,7 @@ var NAVTREEINDEX0 =
 "export_8hpp.html":[3,0,7,1],
 "files.html":[6,0],
 "files_8hpp.html":[3,0,8,0],
+"formats_8hpp.html":[3,0,12],
 "functions.html":[5,2,0],
 "functions.html":[5,2,0,0],
 "functions_b.html":[5,2,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__safetensors.html":[3,0,0],
 "index.html":[],
 "index.html#autotoc_md1":[0],
-"index.html#autotoc_md2":[1],
-"index.html#autotoc_md3":[2]
+"index.html#autotoc_md2":[1]
 };
