@@ -76,6 +76,13 @@ Hub client and its cache, and the tools. Not here:
   opcode by opcode, temporary directories); `tests/crosscheck/` (the C++ half of the cross-check); `benchmarks/`;
   `tools/` (`mf-inspect`, `mf-convert`, `mf-download`, their smoke run); `scripts/`; `docs/`; `docker/ubuntu/`;
   `third_party/` (submodules only).
+- `formats.hpp` is the umbrella of the headers that need no third party, and the source of the single include
+  `snicholls_formats.hpp` (tooling's `single_include.py`, `third_party/tooling`, `tooling.conf`), with core,
+  ts-moveables and core-adapters expanded too. It is **never committed** (`single_include/` holds only its README):
+  every build generates and compiles it alone (`model_formats_single_include`), the CTest `check.single_include` and
+  CI fail while a header is in neither `formats.hpp` nor `single_include_opt_in`, every release tag attaches it to the
+  GitHub release, and `make single-include` writes it locally. A new header joins `formats.hpp`, or the opt-in list
+  with its reason.
 - Header guards `snicholls_formats_<path>_hpp`; macros `SNICHOLLS_FORMATS_*`; CMake options `MODEL_FORMATS_*`.
 
 ## Design rules (MUST)
@@ -146,7 +153,7 @@ build).
     make test-werror       # macOS: every CTest, warnings as errors
     make docs              # Doxygen, warnings as errors
     make demos             # build and run every demo with its output shown (scripts/run_demos.sh --all, or <name>...)
-    make check             # version and mirror
+    make check             # version, mirror, interfaces and the single include
     make ubuntu            # Ubuntu 24.04 in Docker: GCC 13 and Clang 18, Release, Debug, ASan+UBSan under both
     make crosscheck        # the Python cross-check
     make network           # the network tests

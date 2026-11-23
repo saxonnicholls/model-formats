@@ -6,7 +6,7 @@
 #  Copyright 2010-2026 Saxon Herschel Nicholls
 #
 #  tests/ and demos/ mirror include/snicholls/formats/ (CLAUDE.md "Tests", "Demos"). For every public header
-#  <sub>/<name>.hpp (detail/ excluded):
+#  <sub>/<name>.hpp (detail/ and the umbrella formats.hpp excluded):
 #
 #    tests/<sub>/<name>_test.cpp    registered with model_formats_add_test(<sub>/<name> ...) in tests/CMakeLists.txt
 #    demos/<sub>/<name>_demo.cpp    registered with model_formats_add_demo(<sub>/<name> ...) in demos/CMakeLists.txt
@@ -20,6 +20,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INCLUDE = os.path.join(ROOT, "include", "snicholls", "formats")
+UMBRELLA = "formats.hpp"   # the umbrella: no test or demo of its own, it is compiled as the single include
 
 
 def registered(tree, function):
@@ -41,7 +42,7 @@ def main():
     for dirpath, _, names in os.walk(INCLUDE):
         for n in names:
             rel = os.path.relpath(os.path.join(dirpath, n), INCLUDE)
-            if n.endswith(".hpp") and not rel.startswith("detail" + os.sep):
+            if n.endswith(".hpp") and not rel.startswith("detail" + os.sep) and rel != UMBRELLA:
                 headers.add(rel[:-4])
     problems = []
     for tree, suffix, function in (("tests", "_test.cpp", "model_formats_add_test"), ("demos", "_demo.cpp", "model_formats_add_demo")):

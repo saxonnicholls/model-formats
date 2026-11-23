@@ -5,7 +5,8 @@
 #   make test-werror   the same with warnings as errors (the gate)
 #   make asan          Address + UB sanitizers
 #   make docs          Doxygen, warnings are errors; output build-docs/docs/html
-#   make check         the static checks: version and mirror
+#   make check         the static checks: version, mirror, interfaces and the single include
+#   make single-include  write single_include/snicholls_formats.hpp for this commit (git-ignored)
 #   make ubuntu        the gate on Ubuntu 24.04 in Docker, GCC 13 and Clang 18 (scripts/test_ubuntu.sh)
 #   make crosscheck    our files read by gguf-py, safetensors and numpy in a scratch venv (scripts/crosscheck.sh)
 #   make network       the tests that reach huggingface.co (a few MB)
@@ -19,7 +20,7 @@ BUILD    ?= build
 CONFIG   ?= Release
 CMAKE_FLAGS ?=
 
-.PHONY: all bootstrap test test-werror asan docs demos check ubuntu crosscheck network benchmarks clean
+.PHONY: all bootstrap single-include test test-werror asan docs demos check ubuntu crosscheck network benchmarks clean
 
 all: test
 
@@ -29,6 +30,13 @@ bootstrap:
 check:
 	python3 scripts/check_version.py
 	python3 scripts/check_mirror.py
+	python3 third_party/tooling/scripts/check_interfaces.py
+	python3 third_party/tooling/scripts/single_include.py --check
+
+# single_include/snicholls_formats.hpp for this commit (git-ignored: a release's is attached to the release; every build
+# also generates and compiles its own, tooling STANDARDS section 2)
+single-include:
+	python3 third_party/tooling/scripts/single_include.py
 
 $(BUILD)/CMakeCache.txt:
 	cmake -S . -B $(BUILD) -G Ninja -DCMAKE_BUILD_TYPE=$(CONFIG) -DCMAKE_CXX_COMPILER=$(CXX) $(CMAKE_FLAGS)

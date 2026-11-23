@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- The umbrella `formats.hpp` and the single include `snicholls_formats.hpp`, generated from it by snicholls-tooling's
+  `single_include.py` (`third_party/tooling` at `v0.2.1`, build-time only, checked out by `scripts/bootstrap.sh`),
+  with snicholls-core, ts-moveables and core-adapters expanded, so it needs nothing but the standard library. The
+  headers that parse JSON (nlohmann/json) or link OpenSSL are opted out, each with its reason in `tooling.conf`. It is
+  never committed: every build generates it and compiles it alone, the CTest `check.single_include`, `make check` and
+  CI fail while a header is missing from `formats.hpp`, every release tag attaches it to the GitHub release, and
+  `make single-include` writes it locally. tooling's interface check (`check.interfaces`) runs too.
+
 ## 0.1.0 - 2026-11-23
 
 The first version: safetensors (read, write, sharded indexes), GGUF v2/v3 (read, write, every value type and ggml
