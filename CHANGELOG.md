@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.0 - 2026-11-23
 
 The first version: safetensors (read, write, sharded indexes), GGUF v2/v3 (read, write, every value type and ggml
 type, the standard keys, metadata to and from core's `transformer_config`), Hugging Face `config.json`,
