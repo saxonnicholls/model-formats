@@ -20,7 +20,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(snicholls_formats
-    VERSION 0.1.0
+    VERSION 0.2.0
     DESCRIPTION "model-formats - machine-learning model file formats and the Hugging Face Hub for the snicholls libraries"
     LANGUAGES CXX)
 

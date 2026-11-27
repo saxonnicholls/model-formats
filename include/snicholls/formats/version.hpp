@@ -50,7 +50,7 @@
 /// \brief The major version.
 #define SNICHOLLS_FORMATS_VERSION_MAJOR 0
 /// \brief The minor version.
-#define SNICHOLLS_FORMATS_VERSION_MINOR 1
+#define SNICHOLLS_FORMATS_VERSION_MINOR 2
 /// \brief The patch version.
 #define SNICHOLLS_FORMATS_VERSION_PATCH 0
 
@@ -76,7 +76,7 @@ struct version
     static constexpr int major = SNICHOLLS_FORMATS_VERSION_MAJOR;   ///< Major.
     static constexpr int minor = SNICHOLLS_FORMATS_VERSION_MINOR;   ///< Minor.
     static constexpr int patch = SNICHOLLS_FORMATS_VERSION_PATCH;   ///< Patch.
-    static constexpr const char* string = "0.1.0";                  ///< "major.minor.patch".
+    static constexpr const char* string = "0.2.0";                  ///< "major.minor.patch".
 };
 } // namespace snicholls::formats
 

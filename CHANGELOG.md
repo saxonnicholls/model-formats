@@ -1,11 +1,14 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 - 2026-11-27
+
+On snicholls-core v0.28.0, ts-moveables v1.12.1, core-adapters v0.1.5 and tooling v0.3.2, so every copy of core in
+the build is v0.28.0.
 
 ### Added
 
 - The umbrella `formats.hpp` and the single include `snicholls_formats.hpp`, generated from it by snicholls-tooling's
-  `single_include.py` (`third_party/tooling` at `v0.2.1`, build-time only, checked out by `scripts/bootstrap.sh`),
+  `single_include.py` (`third_party/tooling`, build-time only, checked out by `scripts/bootstrap.sh`),
   with snicholls-core, ts-moveables and core-adapters expanded, so it needs nothing but the standard library. The
   headers that parse JSON (nlohmann/json) or link OpenSSL are opted out, each with its reason in `tooling.conf`. It is
   never committed: every build generates it and compiles it alone, the CTest `check.single_include`, `make check` and

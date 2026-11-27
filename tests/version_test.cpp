@@ -22,5 +22,5 @@ TEST(FormatsVersion, StringIsMajorDotMinorDotPatch)
 TEST(FormatsVersion, CheckOrdersVersions)
 {
     static_assert(SNICHOLLS_FORMATS_VERSION_CHECK(0, 1, 0) < SNICHOLLS_FORMATS_VERSION_CHECK(0, 2, 0));
-    static_assert(SNICHOLLS_FORMATS_VERSION == SNICHOLLS_FORMATS_VERSION_CHECK(0, 1, 0));
+    static_assert(SNICHOLLS_FORMATS_VERSION == SNICHOLLS_FORMATS_VERSION_CHECK(0, 2, 0));
 }

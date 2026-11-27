@@ -18,5 +18,5 @@ int main()
     SNICHOLLS_FORMATS_REQUIRE_VERSION(0, 1, 0);   // fails to compile on an older model-formats
     std::printf("model-formats %s\n", snicholls::formats::version::string);
     //! [version]
-    return std::strcmp(snicholls::formats::version::string, "0.1.0") == 0 ? 0 : 1;
+    return std::strcmp(snicholls::formats::version::string, "0.2.0") == 0 ? 0 : 1;
 }
