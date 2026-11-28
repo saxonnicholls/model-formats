@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['name_0',['name',['../structsnicholls_1_1formats_1_1zip_1_1entry.html#a32be66f595fbb5b758d1f25885fc64f1',1,'snicholls::formats::zip::entry::name'],['../structsnicholls_1_1formats_1_1zip_1_1member.html#ac334cf73cf3c0d13b884069c43864fae',1,'snicholls::formats::zip::member::name'],['../structsnicholls_1_1formats_1_1gguf_1_1ggml__type__traits.html#adf3adc7185449d6fd158dda58d3fe8b1',1,'snicholls::formats::gguf::ggml_type_traits::name'],['../structsnicholls_1_1formats_1_1gguf_1_1tensor__info.html#ac47c800d1bdc76509663a0898ff35000',1,'snicholls::formats::gguf::tensor_info::name'],['../structsnicholls_1_1formats_1_1hf_1_1chat__template.html#a06d5ddcccc91471fea04326f2abad246',1,'snicholls::formats::hf::chat_template::name'],['../structsnicholls_1_1formats_1_1pytorch_1_1tensor__entry.html#a80759b8b6aff0c5e13e4512b7dbe08d4',1,'snicholls::formats::pytorch::tensor_entry::name'],['../structsnicholls_1_1formats_1_1safetensors_1_1entry.html#a095c9335acdee7a90761c454c4edcdd0',1,'snicholls::formats::safetensors::entry::name'],['../structsnicholls_1_1formats_1_1tensor__view.html#a86eeace75e8fe39ddffce0e8e5498593',1,'snicholls::formats::tensor_view::name'],['../structsnicholls_1_1formats_1_1tensor.html#af76d175b0a74d3aef53051bca3c11875',1,'snicholls::formats::tensor::name'],['../namespacesnicholls_1_1formats_1_1gguf_1_1general.html#af4175985e3111a8bafba551501d7bedc',1,'snicholls::formats::gguf::general::name']]],
+  ['names_2ehpp_1',['names.hpp',['../names_8hpp.html',1,'']]],
+  ['ne_2',['ne',['../structsnicholls_1_1formats_1_1gguf_1_1tensor__info.html#a515257cc5d1bf813b6a2f96136a62e68',1,'snicholls::formats::gguf::tensor_info']]],
+  ['nextn_5fpredict_5flayers_3',['nextn_predict_layers',['../namespacesnicholls_1_1formats_1_1gguf_1_1llm.html#ac6687897296f704eb759a0d5d74071cb',1,'snicholls::formats::gguf::llm']]],
+  ['none_4',['none',['../pickle_8hpp.html#a8333275b8d9a148d0f42235314e9dbfba334c4a4c42fdb79d7ebc3e73b517e6f8',1,'snicholls::formats::pytorch']]],
+  ['normal_5',['normal',['../keys_8hpp.html#aaee5857cb53c14a350959459359ddc68afea087517c26fadd409bd4b9dc642555',1,'snicholls::formats::gguf']]],
+  ['not_5ffound_6',['not_found',['../error_8hpp.html#a403a0e8820447a0a2f81b7072e769f06a7500611bf7030bc99d25c354e7b64714',1,'snicholls::formats']]],
+  ['notes_7',['notes',['../structsnicholls_1_1formats_1_1convert_1_1loaded.html#aa9a4d52fbb098b216b4da5ea968f2b4a',1,'snicholls::formats::convert::loaded::notes'],['../structsnicholls_1_1formats_1_1convert_1_1converted.html#abe9171db5beeaa4ecdcdb2b8eb847629',1,'snicholls::formats::convert::converted::notes'],['../structsnicholls_1_1formats_1_1convert_1_1gguf__export.html#a588ed80cc6bb6763375dae9e3e0a400a',1,'snicholls::formats::convert::gguf_export::notes'],['../structsnicholls_1_1formats_1_1model__config.html#ad2f41000bcaa7e6ae7d36483b0b7979d',1,'snicholls::formats::model_config::notes']]],
+  ['npy_8',['npy',['../convert_8hpp.html#adbc03b5767b49cb262e868249faa365fa52a428c9d03ea4d36d1dce83fb66583b',1,'snicholls::formats::convert']]],
+  ['npy_2ehpp_9',['npy.hpp',['../npy_8hpp.html',1,'']]],
+  ['npy_5fheader_10',['npy_header',['../npy_8hpp.html#a6c3323762e6d53efb67f7c9a7cd5d21f',1,'snicholls::formats::numpy']]],
+  ['npz_11',['npz',['../convert_8hpp.html#adbc03b5767b49cb262e868249faa365fa62a9d7654d12a805b75477b61c159734',1,'snicholls::formats::convert']]],
+  ['numbers_12',['numbers',['../structsnicholls_1_1formats_1_1gguf_1_1value.html#a0d476176c25445475217c2a7f6ec8ac9',1,'snicholls::formats::gguf::value']]],
+  ['numpy_13',['NumPy',['../group__numpy.html',1,'']]],
+  ['nvfp4_14',['nvfp4',['../ggml__types_8hpp.html#afa8bd001e0b6ba4150f7e24aa3f57c98aa9c4c967c7f4c70efb9835e17066ce27',1,'snicholls::formats::gguf']]]
+];

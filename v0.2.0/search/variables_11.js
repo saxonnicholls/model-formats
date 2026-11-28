@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['s_0',['s',['../structsnicholls_1_1formats_1_1gguf_1_1metadata__value.html#ae8945245aaa2cb5d312461b8f3bafc64',1,'snicholls::formats::gguf::metadata_value']]],
+  ['scaling_5ffactor_1',['scaling_factor',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#aed74f743c6d7f17cb024fb6c83272632',1,'snicholls::formats::gguf::rope']]],
+  ['scaling_5foriginal_5fcontext_5flength_2',['scaling_original_context_length',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#af0fa8a77f09688e3eff90a3cca9acf3a',1,'snicholls::formats::gguf::rope']]],
+  ['scaling_5ftype_3',['scaling_type',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#adc8dd83c061a655499fd7a7622276ce9',1,'snicholls::formats::gguf::rope']]],
+  ['scaling_5fyarn_5fbeta_5ffast_4',['scaling_yarn_beta_fast',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#af8e7fb3a29aa7f7cf590ed3bb711bfd8',1,'snicholls::formats::gguf::rope']]],
+  ['scaling_5fyarn_5fbeta_5fslow_5',['scaling_yarn_beta_slow',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#a657550e820fe785713fec611986095f7',1,'snicholls::formats::gguf::rope']]],
+  ['scaling_5fyarn_5flog_5fmultiplier_6',['scaling_yarn_log_multiplier',['../namespacesnicholls_1_1formats_1_1gguf_1_1rope.html#ac2552c4ddaf956c6fe9f89e195f85065',1,'snicholls::formats::gguf::rope']]],
+  ['scores_7',['scores',['../structsnicholls_1_1formats_1_1vocabulary.html#a76e0a3ac0dfd6561d8da9038d22be0cd',1,'snicholls::formats::vocabulary::scores'],['../namespacesnicholls_1_1formats_1_1gguf_1_1tokenizer.html#a8ddb30729af1094b511fa65ee02558ef',1,'snicholls::formats::gguf::tokenizer::scores']]],
+  ['separator_5ftoken_5fid_8',['separator_token_id',['../namespacesnicholls_1_1formats_1_1gguf_1_1tokenizer.html#acfe0d56a04b33b9b12fb53f12210fdd4',1,'snicholls::formats::gguf::tokenizer']]],
+  ['sha256_9',['sha256',['../structsnicholls_1_1formats_1_1hub_1_1repo__file.html#abe666fddd35a0bb4796a35e3b74ac101',1,'snicholls::formats::hub::repo_file']]],
+  ['shape_10',['shape',['../structsnicholls_1_1formats_1_1gguf_1_1tensor__info.html#a7e62b5b08d13efdc5ab1a1f81d7a8aac',1,'snicholls::formats::gguf::tensor_info::shape'],['../structsnicholls_1_1formats_1_1llmc_1_1checkpoint.html#af72e992dfb0036ba7f8589fa4519d464',1,'snicholls::formats::llmc::checkpoint::shape'],['../structsnicholls_1_1formats_1_1pytorch_1_1tensor__entry.html#adf172f0c76047bfc46243e9e6582be84',1,'snicholls::formats::pytorch::tensor_entry::shape'],['../structsnicholls_1_1formats_1_1safetensors_1_1entry.html#a1283953fb868e5f80fadbeb2dfb382b3',1,'snicholls::formats::safetensors::entry::shape'],['../structsnicholls_1_1formats_1_1tensor__view.html#a1693c7321ddef290c703f7d06c5e2f4a',1,'snicholls::formats::tensor_view::shape'],['../structsnicholls_1_1formats_1_1tensor.html#a98508643c1e0dd475ef8f941b2c358ff',1,'snicholls::formats::tensor::shape']]],
+  ['size_11',['size',['../structsnicholls_1_1formats_1_1hub_1_1repo__file.html#a612681dd2f086f6de17ebecf10b5d5f6',1,'snicholls::formats::hub::repo_file']]],
+  ['size_5flabel_12',['size_label',['../namespacesnicholls_1_1formats_1_1gguf_1_1general.html#ab2dc2536904fd17c86c8ba5981a00cc4',1,'snicholls::formats::gguf::general']]],
+  ['skipped_13',['skipped',['../structsnicholls_1_1formats_1_1pytorch_1_1checkpoint.html#ad91daa1c2d95abee1b485bd71f52f48c',1,'snicholls::formats::pytorch::checkpoint']]],
+  ['sliding_5fwindow_14',['sliding_window',['../namespacesnicholls_1_1formats_1_1gguf_1_1attention.html#ac6f94bd79fcd9aab45f3b1304a92e1e0',1,'snicholls::formats::gguf::attention']]],
+  ['snapshot_15',['snapshot',['../structsnicholls_1_1formats_1_1hub_1_1download__report.html#ad633a94bfab21266b0d4568fd569256e',1,'snicholls::formats::hub::download_report']]],
+  ['source_5frepo_5furl_16',['source_repo_url',['../namespacesnicholls_1_1formats_1_1gguf_1_1general.html#a89a41437bffcbfc5c6672287a9a868d5',1,'snicholls::formats::gguf::general']]],
+  ['source_5furl_17',['source_url',['../namespacesnicholls_1_1formats_1_1gguf_1_1general.html#a022d16df1052c5135ca37a8d59607690',1,'snicholls::formats::gguf::general']]],
+  ['storage_18',['storage',['../structsnicholls_1_1formats_1_1pytorch_1_1tensor__entry.html#ad829714cdd860bc662cc119ad26c465b',1,'snicholls::formats::pytorch::tensor_entry']]],
+  ['storage_5fkey_19',['storage_key',['../structsnicholls_1_1formats_1_1pytorch_1_1tensor__entry.html#aeb8f82387b9807c65012aaa744fbd178',1,'snicholls::formats::pytorch::tensor_entry']]],
+  ['stride_20',['stride',['../structsnicholls_1_1formats_1_1pytorch_1_1tensor__entry.html#a4bb1f8cf168273bb16fc4610fe140fa8',1,'snicholls::formats::pytorch::tensor_entry']]],
+  ['string_21',['string',['../structsnicholls_1_1formats_1_1version.html#ad1c5f5f5b29bae72d5193a9822e5a812',1,'snicholls::formats::version']]]
+];
